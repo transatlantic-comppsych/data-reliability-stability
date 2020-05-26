@@ -18,6 +18,7 @@ stability_12 = float('%.3f'%(stability_12))
 stability_23 = float('%.3f'%(stability_23))
 stability_13 = float('%.3f'%(stability_13))
 
-assert stability_12 == 1.079
-assert stability_23 == 0.932
-assert stability_13 == 1.006
+def test_stability_values():
+    assert stability_12 == 1.079
+    assert stability_23 == 0.932
+    assert stability_13 == 1.006
