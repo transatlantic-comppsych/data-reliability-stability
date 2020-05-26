@@ -12,10 +12,31 @@ jobs:
       - python/install-deps
       - python/save-cache
       - run:
-          name: Check Files
-          command: ls -al
+         name: Check Files
+         command: ls -al
+  test-correlation:
+    steps:
+      - run:
+          name: test correlation
+          command: |
+            python -m pytest tests/test_correlation.py
+  test-reliability:
+      steps:
+      - run:
+          name: test reliability
+          command: |
+            python -m pytest tests/test_reliability.py
+  test-stability:
+      steps:
+        - run:
+            name: test stability
+            command: |
+              python -m pytest tests/test_stability.py
 
 workflows:
   main:
     jobs:
       - build-and-test
+      - test-correlation
+      - test-reliability
+      - test-stability
