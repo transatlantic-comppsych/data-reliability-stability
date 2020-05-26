@@ -17,7 +17,7 @@ jobs:
          command: ls -al
          
   run-tests:
-    working_directory: ~/data-reliability-stability
+    working_directory: ~/data-reliability-stability/tests
     executor: python/default
     steps:
       - checkout
@@ -37,8 +37,8 @@ jobs:
       - run:
          name: Run Tests
          command: |
-          mkdir tests/test-results
-          pytest ./tests --junitxml=test-results/junit.xml
+          mkdir test-results
+          pytest --junitxml=test-results/junit.xml
       - store_test_results:
          path: test-results
 
