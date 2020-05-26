@@ -15,8 +15,8 @@ jobs:
          name: Check Files
          command: ls -al
          
-  test-correlation:
-    working_directory: ~/data-reliability-stability
+  run-tests:
+    working_directory: ~/data-reliability-stability/tests
     executor: python/default
     steps:
       - checkout
@@ -30,49 +30,11 @@ jobs:
          name: Install Pathlib
          command: pip install pathlib
       - run:
-         name: test correlation
-         command: python -m pytest tests/test_correlation.py
-            
-  test-reliability:
-    working_directory: ~/data-reliability-stability
-    executor: python/default
-    steps:
-      - checkout
-      - run: 
-         name: Install Pytest
-         command: pip install -U pytest
-      - run:
-         name: Install Pandas
-         command: pip install pandas
-      - run: 
-         name: Install Pathlib
-         command: pip install pathlib
-      - run:
-         name: test reliability
-         command: python -m pytest tests/test_reliability.py
-            
-  test-stability:
-    working_directory: ~/data-reliability-stability
-    executor: python/default
-    steps:
-      - checkout
-      - run: 
-         name: Install Pytest
-         command: pip install -U pytest
-      - run:
-         name: Install Pandas
-         command: pip install pandas
-      - run: 
-         name: Install Pathlib
-         command: pip install pathlib
-      - run:
-         name: test stability
-         command: python -m pytest tests/test_stability.py
+         name: Run Tests
+         command: python -m pytest
 
 workflows:
   main:
     jobs:
       - build-and-test
-      - test-correlation
-      - test-reliability
-      - test-stability
+      - run-tests
