@@ -12,10 +12,8 @@ jobs:
       - python/install-deps
       - python/save-cache
       - run:
-          name: Code Has Arrived
-          command: |
-            ls -al
-            echo '^^^That should look familiar^^^'
+          name: Check Files
+          command: ls -al
 
 workflows:
   main:
