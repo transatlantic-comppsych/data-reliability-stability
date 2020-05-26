@@ -17,6 +17,7 @@ jobs:
          
   test-correlation:
     working_directory: ~/data-reliability-stability
+    executor: python/default
     steps:
       - checkout
       - run:
@@ -25,6 +26,7 @@ jobs:
             
   test-reliability:
     working_directory: ~/data-reliability-stability
+    executor: python/default
     steps:
       - checkout
       - run:
@@ -33,6 +35,7 @@ jobs:
             
   test-stability:
     working_directory: ~/data-reliability-stability
+    executor: python/default
     steps:
       - checkout
       - run:
