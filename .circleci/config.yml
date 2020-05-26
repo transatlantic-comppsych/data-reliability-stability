@@ -14,15 +14,15 @@ jobs:
       - run:
          name: Check Files
          command: ls -al
-      - run: 
-         name: Install Pytest
-         command: pip install -U pytest
          
   test-correlation:
     working_directory: ~/data-reliability-stability
     executor: python/default
     steps:
       - checkout
+      - run: 
+         name: Install Pytest
+         command: pip install -U pytest
       - run:
          name: test correlation
          command: python -m pytest tests/test_correlation.py
@@ -32,6 +32,9 @@ jobs:
     executor: python/default
     steps:
       - checkout
+      - run: 
+         name: Install Pytest
+         command: pip install -U pytest
       - run:
          name: test reliability
          command: python -m pytest tests/test_reliability.py
@@ -41,6 +44,9 @@ jobs:
     executor: python/default
     steps:
       - checkout
+      - run: 
+         name: Install Pytest
+         command: pip install -U pytest
       - run:
          name: test stability
          command: python -m pytest tests/test_stability.py
