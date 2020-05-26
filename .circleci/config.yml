@@ -4,6 +4,7 @@ orbs:
   python: circleci/python@0.2.1
 
 jobs:
+  
   build-and-test:
     executor: python/default
     steps:
@@ -30,8 +31,16 @@ jobs:
          name: Install Pathlib
          command: pip install pathlib
       - run:
+         name: Install Reliability Stability Package
+         command: pip install reliability-stability-calc
+         
+      - run:
          name: Run Tests
-         command: python -m pytest
+         command: |
+          mkdir test-results
+          pytest --junitxml=test-results/junit.xml
+      - store_test_results:
+         path: test-results
 
 workflows:
   main:

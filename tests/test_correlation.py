@@ -3,7 +3,6 @@ from pathlib import Path
 import pandas as pd
 import reliability_stability_pkg as rs
 
-
 test_dir = Path(__file__).parent
 #import data set
 data = pd.read_csv(test_dir / 'BodyFat.csv')
