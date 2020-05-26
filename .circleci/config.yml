@@ -1,0 +1,40 @@
+version: 2.1
+
+orbs:
+  python: circleci/python@0.2.1
+
+jobs:
+  build-and-test:
+    executor: python/default
+    steps:
+      - checkout
+      - python/load-cache
+      - python/install-deps
+      - python/save-cache
+      - run:
+         name: Check Files
+         command: ls -al
+         
+  run-tests:
+    working_directory: ~/data-reliability-stability/tests
+    executor: python/default
+    steps:
+      - checkout
+      - run: 
+         name: Install Pytest
+         command: pip install -U pytest
+      - run:
+         name: Install Pandas
+         command: pip install pandas
+      - run: 
+         name: Install Pathlib
+         command: pip install pathlib
+      - run:
+         name: Run Tests
+         command: python -m pytest
+
+workflows:
+  main:
+    jobs:
+      - build-and-test
+      - run-tests
