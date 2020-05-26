@@ -32,7 +32,7 @@ jobs:
          command: pip install pathlib
       - run:
          name: Install Reliability Stability Package
-         command: pip install -r reliability_stability_pkg
+         command: pip install reliability_stability_pkg
          
       - run:
          name: Run Tests
