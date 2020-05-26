@@ -2,6 +2,8 @@ version: 2.1
 
 orbs:
   python: circleci/python@0.2.1
+  conda: deepgenomics/conda@27.0.0
+  
 
 jobs:
   build-and-test:
@@ -17,7 +19,7 @@ jobs:
          
   test-correlation:
     working_directory: ~/data-reliability-stability
-    executor: python/default
+    executor: conda/default
     steps:
       - checkout
       - run: 
@@ -29,7 +31,7 @@ jobs:
             
   test-reliability:
     working_directory: ~/data-reliability-stability
-    executor: python/default
+    executor: conda/default
     steps:
       - checkout
       - run: 
@@ -41,7 +43,7 @@ jobs:
             
   test-stability:
     working_directory: ~/data-reliability-stability
-    executor: python/default
+    executor: conda/default
     steps:
       - checkout
       - run: 
