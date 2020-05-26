@@ -13,7 +13,5 @@ column_two = data.loc[:, 'HEIGHT']
 
 correlation_test_value = float('%.3f'%(rs.calc_correlation(column_one, column_two)))
 
-if correlation_test_value == 0.308:
-  True
-else:
-  False
+def test_correlation_value():
+    assert correlation_test_value == 0.308
