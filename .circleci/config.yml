@@ -42,6 +42,12 @@ jobs:
          name: Install Pytest
          command: pip install -U pytest
       - run:
+         name: Install Pandas
+         command: pip install pandas
+      - run: 
+         name: Install Pathlib
+         command: pip install pathlib
+      - run:
          name: test reliability
          command: python -m pytest tests/test_reliability.py
             
@@ -53,6 +59,12 @@ jobs:
       - run: 
          name: Install Pytest
          command: pip install -U pytest
+      - run:
+         name: Install Pandas
+         command: pip install pandas
+      - run: 
+         name: Install Pathlib
+         command: pip install pathlib
       - run:
          name: test stability
          command: python -m pytest tests/test_stability.py
