@@ -2,8 +2,6 @@ version: 2.1
 
 orbs:
   python: circleci/python@0.2.1
-  conda: deepgenomics/conda@27.0.0
-  
 
 jobs:
   build-and-test:
@@ -19,19 +17,25 @@ jobs:
          
   test-correlation:
     working_directory: ~/data-reliability-stability
-    executor: conda/default
+    executor: python/default
     steps:
       - checkout
       - run: 
          name: Install Pytest
          command: pip install -U pytest
       - run:
+         name: Install Pandas
+         command: pip install pandas
+      - run: 
+         name: Install Pathlib
+         command: pip install pathlib
+      - run:
          name: test correlation
          command: python -m pytest tests/test_correlation.py
             
   test-reliability:
     working_directory: ~/data-reliability-stability
-    executor: conda/default
+    executor: python/default
     steps:
       - checkout
       - run: 
@@ -43,7 +47,7 @@ jobs:
             
   test-stability:
     working_directory: ~/data-reliability-stability
-    executor: conda/default
+    executor: python/default
     steps:
       - checkout
       - run: 
