@@ -14,7 +14,5 @@ column_three = data.loc[:, 'WRIST']
 
 reliability_test_value = float('%.3f'%(rs.calc_reliability(column_one, column_two, column_three)))
 
-if reliability_test_value == 0.628:
-  True
-else:
-  False
+def test_reliability_value():
+    assert reliability_test_value == 0.628
