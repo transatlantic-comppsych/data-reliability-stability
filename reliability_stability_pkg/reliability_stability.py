@@ -24,7 +24,7 @@ def calc_correlation(column_1, column_2):
 def calc_reliability(column_1, column_2, column_3):
 	
 	#find true correlations between measured values
-	r12 = float(calc_correlation(column_1, column_2))
+	r12 = pd.DataFrame(column_1, column_2)
 	r23 = float(calc_correlation(column_2, column_3))
 	r13 = float(calc_correlation(column_1, column_3))
 
