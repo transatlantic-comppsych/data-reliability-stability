@@ -24,7 +24,7 @@ def calc_reliability(data, column_1, column_2, column_3):
 	r13 = calc_correlation(data, column_1, column_3)
 
 	#calculate reliability between three columns
-	reliability = float(((r12*r23)/r13))
+	reliability = (r12*r23)/r13)
 	return reliability
 
 #function to find the stability of a measure over three collection points
@@ -36,9 +36,9 @@ def calc_stability(data, column_1, column_2, column_3):
 	r13 = calc_correlation(data, column_1, column_3)
 
 	#calculate stability over each time gap
-	stability_12 = float(r13/r23)
-	stability_23 = float(r13/r12)
-	stability_13 = float((r13**2)/(r12*r23))
+	stability_12 = r13/r23
+	stability_23 = r13/r12
+	stability_13 = (r13**2)/(r12*r23)
 	
 	return(stability_12, stability_23, stability_13)
 
