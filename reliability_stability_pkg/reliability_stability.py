@@ -9,7 +9,7 @@ def calc_correlation(data, column_a, column_b):
 	if isinstance(data, pd.DataFrame):
 	
 		# calculate correlation between two columns
-		correlation = data.corr().loc[column_a,columna_b]
+		correlation = data.corr().loc[column_a,column_b]
 	
 		# return correlation between two columns
 		return correlation
