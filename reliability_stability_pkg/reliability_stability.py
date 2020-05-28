@@ -5,11 +5,14 @@ import sys
 #function to find the correlation between two variable columns
 def calc_correlation(data, column_a, column_b):
 	
-	# calculate correlation between two columns
-	correlation = data.corr().loc[column_a,columna_b]
+	# check if data is a DataFrame
+	if isinstance(data, pd.DataFrame):
 	
-	# return correlation between two columns
-	return correlation
+		# calculate correlation between two columns
+		correlation = data.corr().loc[column_a,columna_b]
+	
+		# return correlation between two columns
+		return correlation
 
 #function to find the reliability of a measure over three collection points
 def calc_reliability(data, column_1, column_2, column_3):
