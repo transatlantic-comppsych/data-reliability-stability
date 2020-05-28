@@ -23,7 +23,7 @@ def calc_reliability(data, column_1, column_2, column_3):
 	r13 = calc_correlation(data, column_1, column_3)
 
 	#calculate reliability between three columns
-	reliability = (r12*r23)/r13)
+	reliability = (r12*r23)/r13
 	return reliability
 
 #function to find the stability of a measure over three collection points
