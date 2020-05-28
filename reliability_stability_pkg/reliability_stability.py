@@ -19,9 +19,9 @@ def calc_correlation(data, column_a, column_b):
 def calc_reliability(data, column_1, column_2, column_3):
 	
 	#find true correlations between measured values
-	r12 = float(calc_correlation(data, column_1, column_2))
-	r23 = float(calc_correlation(data, column_2, column_3))
-	r13 = float(calc_correlation(data, column_1, column_3))
+	r12 = calc_correlation(data, column_1, column_2)
+	r23 = calc_correlation(data, column_2, column_3)
+	r13 = calc_correlation(data, column_1, column_3)
 
 	#calculate reliability between three columns
 	reliability = float(((r12*r23)/r13))
@@ -31,9 +31,9 @@ def calc_reliability(data, column_1, column_2, column_3):
 def calc_stability(data, column_1, column_2, column_3):
 	
 	#find true correlations between measured values
-	r12 = float(calc_correlation(data, column_1, column_2))
-	r23 = float(calc_correlation(data, column_2, column_3))
-	r13 = float(calc_correlation(data, column_1, column_3))
+	r12 = calc_correlation(data, column_1, column_2)
+	r23 = calc_correlation(data, column_2, column_3)
+	r13 = calc_correlation(data, column_1, column_3)
 
 	#calculate stability over each time gap
 	stability_12 = float(r13/r23)
