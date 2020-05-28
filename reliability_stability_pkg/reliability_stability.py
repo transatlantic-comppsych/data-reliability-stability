@@ -4,16 +4,12 @@ import sys
 
 #function to find the correlation between two variable columns
 def calc_correlation(data, column_a, column_b):
-    
-    # create new data frame with only column_a and column_b
-    data_12 = pd.DataFrame(data, columns=[column_a, column_b])
-    
-    # create correlation matrix for column_a and column_b
-    correlation_matrix_12 = data_12.corr()
-    
-    # return correlation between two columns
-    correlation = correlation_matrix_12.iloc[0,1]
-    return correlation
+	
+	# calculate correlation between two columns
+	correlation = data.corr().loc[column_a,columna_b]
+	
+	# return correlation between two columns
+	return correlation
 
 #function to find the reliability of a measure over three collection points
 def calc_reliability(data, column_1, column_2, column_3):
