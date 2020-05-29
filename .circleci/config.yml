@@ -30,6 +30,9 @@ jobs:
       - run: 
          name: Install Pathlib
          command: pip install pathlib
+      - run:
+         name: Install numpy
+         command: pip install numpy
 
       - run:
          name: Run Tests
