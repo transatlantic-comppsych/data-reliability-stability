@@ -1,7 +1,9 @@
 #import necessary python libraries
 from pathlib import Path
 import pandas as pd
-import reliability_stability_pkg as rs
+import sys
+sys.path.insert(0, "/lilyeisner/Desktop/r_s_master/reliability_stability_pkg")
+from reliability_stability_pkg import reliability_stability as rs
 
 test_dir = Path(__file__).parent
 #import data set
