@@ -1,6 +1,7 @@
 #import necessary python libraries
 import pandas as pd
 import sys
+import numpy as np
 
 #function to find the correlation between two variable columns
 def calc_correlation(data, column_a, column_b):
