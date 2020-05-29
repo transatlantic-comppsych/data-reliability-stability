@@ -2,7 +2,7 @@
 from pathlib import Path
 import pandas as pd
 import sys
-sys.path.insert(0, "/lilyeisner/Desktop/r_s_master/reliability_stability_pkg")
+sys.path.insert(0, "/data-reliability-stabilty/reliability_stability_pkg")
 from reliability_stability_pkg import reliability_stability as rs
 
 test_dir = Path(__file__).parent
