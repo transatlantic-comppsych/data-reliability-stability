@@ -30,10 +30,7 @@ jobs:
       - run: 
          name: Install Pathlib
          command: pip install pathlib
-      - run:
-         name: Install sys
-         command: pip install os-sys
-         
+
       - run:
          name: Run Tests
          command: |
