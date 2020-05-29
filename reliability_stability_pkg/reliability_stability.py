@@ -4,13 +4,13 @@ import sys
 
 #function to find the correlation between two variable columns
 def calc_correlation(data, column_a, column_b):
-	
+
 	# check if data is a DataFrame
 	if isinstance(data, pd.DataFrame):
 	
 		# calculate correlation between two columns
-		correlation = data.corr().loc[column_a,column_b]
-	
+		correlation = data.corr().loc[column_a, column_b]
+
 		# return correlation between two columns
 		return correlation
 
@@ -47,9 +47,9 @@ def main():
 	data = pd.read_csv(sys.argv[1])
 
 	#define columns based on input column headers
-	column_one = data.loc[:, sys.argv[2]]
-	column_two = data.loc[:, sys.argv[3]]
-	column_three = data.loc[:, sys.argv[4]]
+	column_one = sys.argv[2]
+	column_two = sys.argv[3]
+	column_three = sys.argv[4]
 
 	print(calc_reliability(data, column_one, column_two, column_three))
 	print(calc_stability(data, column_one, column_two, column_three))
