@@ -17,7 +17,7 @@ jobs:
          command: ls -al
          
   run-tests:
-    working_directory: ~/data-reliability-stability/tests
+    working_directory: ~/data-reliability-stability
     executor: python/default
     steps:
       - checkout
