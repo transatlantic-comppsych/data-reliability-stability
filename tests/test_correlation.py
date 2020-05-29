@@ -14,4 +14,5 @@ column_two = 'HEIGHT'
 correlation_test_value = float('%.3f'%(rs.calc_correlation(data, column_one, column_two)))
 
 def test_correlation_value():
-    assert correlation_test_value == 0.308
+    assert correlation_test_value == 0.308    
+    

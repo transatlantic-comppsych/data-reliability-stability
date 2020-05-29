@@ -30,10 +30,7 @@ jobs:
       - run: 
          name: Install Pathlib
          command: pip install pathlib
-      - run:
-         name: Install Reliability Stability Package
-         command: pip install reliability-stability-calc
-         
+
       - run:
          name: Run Tests
          command: |
