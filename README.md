@@ -14,7 +14,9 @@ Continuous Integration - "circleci passing" indicates that the project's tests a
 
 pip install reliability stability:
 
+```
 >>> pip install reliability-stability-calc
+```
 
 ## Citations
 
