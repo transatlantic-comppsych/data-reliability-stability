@@ -2,6 +2,7 @@
 import pandas as pd
 import sys
 import numpy as np
+from matplotlib import pyplot
 
 #function to find the correlation between two variable columns
 def calc_correlation(data, column_a, column_b):
@@ -70,6 +71,35 @@ def assumption_test(data, column_1, column_2, column_3, column_4):
     
     # return the difference in the adjusted product correlations
     return adjusted_product_1 - adjusted_product_2
+
+# function to bootstrap the assumption test
+def bootstrap_assumption_test(data,column_1,column_2,column_3,column_4,bootstrap_num,alpha):
+    
+    # configure bootstrap
+    n_iterations = bootstrap_num
+    n_size = int(len(data) * 0.50)
+    
+    # run bootstrap
+    assumption_test_stats = list()
+    for i in range(n_iterations):
+        
+	# prepare test sets
+        test_data = data.sample(n=n_size,replace=True)
+        
+        # run assumption test on subset test data
+        assumption_value = assumption_test(test_data,column_1,column_2,column_3,column_4)
+        assumption_test_stats.append(assumption_value)
+        
+    # plot assumption test scores
+    pyplot.hist(assumption_test_stats)
+    pyplot.show()
+    
+    # calculate confidence intervals 
+    lower_bound = ((1.0-alpha)/2.0) * 100
+    lower = max(0.0, numpy.percentile(assumption_test_stats, lower_bound))
+    upper_bound = (alpha+((1.0-alpha)/2.0)) * 100
+    upper = min(1.0, numpy.percentile(assumption_test_stats, upper_bound))
+    print(str(alpha*100) + ' confidence interval ' + str(lower) + ' and ' + str(upper))
 
 def main():
 	
