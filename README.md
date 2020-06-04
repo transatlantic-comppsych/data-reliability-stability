@@ -2,7 +2,7 @@
 
 ## Description
 
-reliability-stability is a simple package takes a csv or other pandas compatable data file and gives the reliability and stability of three columns. The reliability and stability calculations, as well as an assumption test, are based on the 1969 paper from Heise, D. R. 'Separating Reliability and Stability in Test-Retest Correlation.
+reliability-stability is a simple package takes a csv or other pandas compatable data file and gives the reliability and stability of three columns. The reliability and stability calculations, as well as an assumption test, are based on the 1969 paper from Heise, D. R. ['Separating Reliability and Stability in Test-Retest Correlation'] (https://doi.org/10.2307/2092790).
 
 ## Continuous Integration
 
@@ -15,7 +15,7 @@ Continuous Integration - "circleci passing" indicates that the project's tests a
 pip install reliability stability:
 
 '''
->>> pip install reliability-stability-calc
+pip install reliability-stability-calc
 '''
 
 ## Citations
