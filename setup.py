@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
     
 setuptools.setup(
     name="reliability-stability-calc",
-    version="0.0.1",
+    version="0.0.2",
     author="Lily Eisner",
     author_email="lillian.eisner@gmail.com",
     description="Calculation for relibability and stability three data sets",
