@@ -96,9 +96,9 @@ def bootstrap_assumption_test(data,column_1,column_2,column_3,column_4,bootstrap
     
     # calculate confidence intervals 
     lower_bound = ((1.0-alpha)/2.0) * 100
-    lower = max(0.0, numpy.percentile(assumption_test_stats, lower_bound))
+    lower = max(0.0, np.percentile(assumption_test_stats, lower_bound))
     upper_bound = (alpha+((1.0-alpha)/2.0)) * 100
-    upper = min(1.0, numpy.percentile(assumption_test_stats, upper_bound))
+    upper = min(1.0, np.percentile(assumption_test_stats, upper_bound))
     print(str(alpha*100) + ' confidence interval ' + str(lower) + ' and ' + str(upper))
 
 def main():
