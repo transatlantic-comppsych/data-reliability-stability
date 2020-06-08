@@ -25,6 +25,8 @@ reliability stability is a python package with fuctions defined to:
 4. perform an assumption test with a fourth column (assumption_test)
 5. implement a bootstap test to test assumptions (bootstrap_assumption_test)
 
+Refer to the [documentation](https://github.com/nimh-mbdu/data-reliability-stability/wiki) for more examples and narrative guides.
+
 ## Citations
 
 Heise, D. R. (1969). Separating reliability and stability in test-retest correlation. American Sociological Review, 34(1), 93–101. https://doi.org/10.2307/2092790
