@@ -35,7 +35,10 @@ jobs:
          command: pip install numpy
       - run:
          name: Install matplotlib
-         command: pip install matplotlib 
+         command: pip install matplotlib
+      - run:
+         name: Install reliability_stability package
+         command: pip install .
 
       - run:
          name: Run Tests
