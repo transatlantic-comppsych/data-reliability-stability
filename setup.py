@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
     
 setuptools.setup(
     name="reliability-stability-calc",
-    version="0.0.3",
+    version="0.0.4",
     author="Lily Eisner",
     author_email="lillian.eisner@gmail.com",
     description="Calculation for relibability and stability three data sets",
@@ -13,7 +13,7 @@ setuptools.setup(
     long_description_content_type="text/markdown",
     url="https://github.com/nimh-mbdu/data-reliability-stability",
     #packages=setuptools.find_packages(),
-    packages=['reliability_stability_pkg'],
+    packages=['reliability_stability'],
     install_requires=[
         'pandas',
         'numpy',
